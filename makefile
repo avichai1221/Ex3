@@ -1,4 +1,7 @@
 
+isort: question1.o main2.o
+	gcc -Wall -o isort main2.o question1.o
+
 
 txtfind: functions.o main.o
 	gcc -Wall -o txtfind main.o functions.o
