@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include "functions.h"
-#include <math.h>
-//
-// Created by avichai on 12/15/19.
-//
-
 
 int substring(char * str1,char * str2)
 {
@@ -59,30 +54,28 @@ int similar (char *big, char *t)
 }
 void print_lines(char wordSerch[])
 {
-    FILE*f=fopen("cats.txt","r");
     char linecheak[LINE];
-    fgets(linecheak,LINE,f);
-    while (!feof (f))
+    fgets(linecheak,LINE,stdin);
+    while (!feof (stdin))
     {
-        fgets(linecheak,LINE,f);
+        fgets(linecheak,LINE,stdin);
         if(substring(linecheak,wordSerch))
             printf("%s", linecheak);
 
     }
-    fclose(f);
+    fclose(stdin);
 }
 
 void print_similar_words(char wordSerch[])
-{
-    FILE*f=fopen("cats.txt","r");
 
+{
     char wordCheak[WORD];
-    fscanf(f,"%s\n",wordCheak);
-    while (!feof (f))
+    fscanf(stdin,"%s\n",wordCheak);
+    while (!feof (stdin))
     {
-        fscanf(f,"%s\n",wordCheak);
+        fscanf(stdin,"%s\n",wordCheak);
         if(similar(wordCheak,wordSerch))
             printf("%s\n", wordCheak);
     }
-fclose(f);
+fclose(stdin);
 }

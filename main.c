@@ -3,12 +3,10 @@
 #include "functions.h"
 int main() {
 
-// -------------------------------------------------------------------------
-       FILE*f=fopen("cats.txt","r"); //קריאה מהקובץ עם הרשאת R
        char wordSerch[WORD];
        char Option;
-fscanf(f,"%s\n%c",wordSerch,&Option);
-fclose(f);
+fscanf(stdin,"%s\n%c",wordSerch,&Option);
+
 if(Option =='a')
 {
     print_lines(wordSerch);
@@ -17,7 +15,5 @@ if(Option=='b')
 {
     print_similar_words(wordSerch);
 }
-
-//--------------------------------------------------------------------------
 
 }
