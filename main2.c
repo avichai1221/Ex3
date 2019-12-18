@@ -5,7 +5,7 @@ int main()
  int array[SIZE];
     for (int i = 0; i < SIZE; i++)
     {
-        scanf("%d",(array+i));
+        fscanf(stdin,"%d",(array+i));
     }
     insertion_sort(array,SIZE);
 
